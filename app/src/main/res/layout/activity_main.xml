@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/showBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Show"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/hideBtn"/>
+        <Button
+            android:id="@+id/hideBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hide"
+            app:layout_constraintStart_toEndOf="@id/showBtn"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="STATE_COLLAPSED"
+            app:layout_constraintTop_toBottomOf="@id/showBtn"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:behavior_peekHeight="20dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="Touch me"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
